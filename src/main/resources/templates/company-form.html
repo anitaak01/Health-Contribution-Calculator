@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/wave-background-abstract-gradient-design_483537-3688.jpg');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+    </style>
+    <title>Zapisz przesiębiorstwo</title>
+</head>
+<body>
+<div class="container">
+    <h3>Lista przdsiębiorstw</h3>
+    <hr>
+    <p class="h4 mb-4b ">Uzypełnij informacje na temat przedsiębiorstwa</p>
+
+    <form action="#" th:action="@{/company/save}"
+          th:object="${companies}" method="post">
+
+        <input type="hidden" th:field="*{companyId}" />
+
+        <input type="text" th:field="*{companyName}"
+               class="form-control-center mb-4 w-25" placeholder="Nazwa">
+
+        <input type="text" th:field="*{ownerFirstName}"
+               class="form-control-center mb-4 w-25" placeholder="Imię właściciela">
+
+        <input type="text" th:field="*{ownerLastName}"
+               class="form-control-center mb-4 w-25" placeholder="Nazwisko właściciela">
+
+        <p></p>
+        <button type="submit" class="btn btn-success btn-block">Zapisz</button>
+    </form>
+    <hr>
+    <a th:href="@{/company/list}"class="link-secondary" >Wróć do listy</a>
+</div>
+
+</body>
+</html>

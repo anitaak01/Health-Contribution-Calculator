@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title >Dochody</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/wave-background-abstract-gradient-design_483537-3688.jpg');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container text-center">
+
+    <h3 >Dochody</h3>
+    <hr>
+    <a th:href="@{/income/showFormForAdd}"
+       class="btn btn-dark btn-lg mb-3">
+        Dodaj
+    </a>
+    <table class="table table-dark table-striped">
+        <thead class="bg-info">
+        <tr>
+            <th>Przedsiębiorstwo</th>
+            <th>Miesiąc</th>
+            <th>Przychody</th>
+            <th>Koszty</th>
+            <th>Dochód miesięczny</th>
+            <th>Dochód narastająco</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tempIncome : ${income}">
+
+            <td th:text="${tempIncome.companyId}"></td>
+            <td th:text="${tempIncome.month}"></td>
+            <td th:text="${#numbers.formatDecimal(tempIncome.revenue, 0, 'COMMA', 2, 'POINT')}"></td>
+            <td th:text="${#numbers.formatDecimal(tempIncome.cost, 0, 'COMMA', 2, 'POINT')}"></td>
+            <td th:text="${#numbers.formatDecimal(tempIncome.income, 0, 'COMMA', 2, 'POINT')}"></td>
+            <td th:text="${#numbers.formatDecimal(tempIncome.totalIncome, 0, 'COMMA', 2, 'POINT')}"></td>
+            <td>
+                <a th:href="@{/income/showFormForUpdate(id=${tempIncome.id})}" methods="get"
+                   class="btn btn-warning btn-sm">
+                    Zaktualizuj
+                </a>
+                <a th:href="@{/income/delete(id=${tempIncome.id})}" methods="get"
+                   class="btn btn-danger btn-sm"
+                   onclick="if (!(confirm('Czy jesteś pewny, że chcesz usunąć ten dochód?'))) return false">
+                    Usuń
+                </a>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/company/list}" class="link-secondary" >Wróć do listy przedsiębiorstw</a>
+</div>
+
+</body>
+</html>
