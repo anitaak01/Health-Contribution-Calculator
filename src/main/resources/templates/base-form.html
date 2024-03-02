@@ -27,7 +27,12 @@
         <input type="hidden" th:field="*{healthContributionBaseId}" />
 
         <input type="text" th:field="*{companyId}"
-               class="form-control-center mb-2 w-10" placeholder="ID przedsiębiorstwa">
+               class="form-control-center mb-2 w-10" style="text-align: center;" placeholder="ID FIRMY">
+        <style>
+            ::-webkit-input-placeholder {
+                text-align: center;
+            }
+        </style>
 
         <p>Miesiąc</p>
         <select th:field="*{month}"

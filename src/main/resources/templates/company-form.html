@@ -28,13 +28,28 @@
         <input type="hidden" th:field="*{companyId}" />
 
         <input type="text" th:field="*{companyName}"
-               class="form-control-center mb-4 w-25" placeholder="Nazwa">
+               class="form-control-center mb-4 w-25" style="text-align: center;" placeholder="Nazwa">
+        <style>
+            ::-webkit-input-placeholder {
+                text-align: center;
+            }
+        </style>
 
         <input type="text" th:field="*{ownerFirstName}"
-               class="form-control-center mb-4 w-25" placeholder="Imię właściciela">
+               class="form-control-center mb-4 w-25" style="text-align: center;" placeholder="Imię właściciela">
+        <style>
+            ::-webkit-input-placeholder {
+                text-align: center;
+            }
+        </style>
 
         <input type="text" th:field="*{ownerLastName}"
-               class="form-control-center mb-4 w-25" placeholder="Nazwisko właściciela">
+               class="form-control-center mb-4 w-25" style="text-align: center;" placeholder="Nazwisko właściciela">
+        <style>
+            ::-webkit-input-placeholder {
+                text-align: center;
+            }
+        </style>
 
         <p></p>
         <button type="submit" class="btn btn-success btn-block">Zapisz</button>

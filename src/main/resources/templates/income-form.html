@@ -26,10 +26,15 @@
 
         <input type="hidden" th:field="*{id}" />
 
-        <input type="text" th:field="*{companyId}"
-               class="form-control-center mb-2 w-10" placeholder="ID przedsiębiorstwa">
+        <input type="text" th:field="*{companyId} "
+               class="form-control-center mb-2 w-10" style="text-align: center;"  placeholder="ID FIRMY">
+        <style>
+            ::-webkit-input-placeholder {
+                text-align: center;
+            }
+        </style>
 
-        <p>Miesiąc</p>
+        <p>Miesiąc składki zdrowotnej</p>
         <select th:field="*{month}"
                 class="form-select-center mb-3 w-10">
             <option th:value="1">1</option>
@@ -46,13 +51,13 @@
             <option th:value="12">12</option>
 
         </select>
-        <p>Przychody</p>
+        <p>Przychody miesiąca poprzedniego</p>
         <input type="text" th:field="*{revenue}"
-               class="form-control-center mb-4 w-10">
+               class="form-control-center mb-4 w-10" style="text-align: center;">
 
-        <p>Koszty</p>
+        <p>Koszty miesiąca poprzedniego</p>
         <input type="text" th:field="*{cost}"
-               class="form-control-center mb-4 w-10">
+               class="form-control-center mb-4 w-10" style="text-align: center;">
         <p></p>
         <button type="submit" class="btn btn-success btn-block">Zapisz</button>
     </form>

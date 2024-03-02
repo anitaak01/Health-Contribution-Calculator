@@ -27,11 +27,16 @@
         <input type="hidden" th:field="*{deductionId}" />
 
         <input type="text" th:field="*{companyId}"
-               class="form-control-center mb-2 w-25" placeholder="ID przedsiębiorstwa">
+               class="form-control-center mb-2 w-20" style="text-align: center;" placeholder="ID FIRMY">
+        <style>
+            ::-webkit-input-placeholder {
+                text-align: center;
+            }
+        </style>
 
-        <p>Miesiąc zapłaty</p>
+        <p>Miesiąc składki zdrowotnej</p>
         <select th:field="*{paymentMonth}"
-                class="form-select-center mb-3 w-25">
+                class="form-select-center mb-3 w-10">
             <option th:value="1">1</option>
             <option th:value="2">2</option>
             <option th:value="3">3</option>
@@ -48,7 +53,7 @@
         </select>
         <p>Kwota</p>
         <input type="text" th:field="*{socialContributionAmount}"
-               class="form-control-center mb-6 w-25">
+               class="form-control-center mb-6 w-15" style="text-align: center;">
         <p></p>
         <button type="submit" class="btn btn-success btn-block">Zapisz</button>
     </form>
