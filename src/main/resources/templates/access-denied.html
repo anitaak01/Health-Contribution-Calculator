@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Strona główna</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Odmowa dostępu</title>
     <style>
         body {
             background-image: url('https://img.freepik.com/free-vector/wave-background-abstract-gradient-design_483537-3688.jpg');
@@ -19,11 +18,9 @@
 </head>
 <body>
 
-<div>
-    <h1>Witamy na stronie głównej!</h1>
-    <a href="/company/list" class="btn btn-secondary">Przejdź do listy przedsiębiorstw</a>
-</div>
+<h2>Odmowa dostępu. Użytkownik nie jest autoryzowany do wykonania akcji.</h2>
 
-</form>
+<a th:href="@{/}">Powrót do strony głównej</a>
+
 </body>
 </html>
